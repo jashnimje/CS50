@@ -1,0 +1,16 @@
+sort1 uses: Bubble Sort
+
+How do you know?:
+Sort1 uses bubble sort because its sorted file time complexity is minimum as it will break from loop if no swap is done or numbers are already sorted.
+
+
+sort2 uses: Merge Sort
+
+How do you know?:
+Sort2 is mergesort because merge sort will have approximately better time complexity over larger files and time complexity will be more or less similarly in all types of files
+
+
+sort3 uses: Selection Sort
+
+How do you know?:
+Sort3 is selection sort because merge sort no matter what file is provided will take n square complexity because it will check all the values individually everytime.

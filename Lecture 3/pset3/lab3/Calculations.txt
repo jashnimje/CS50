@@ -1,0 +1,61 @@
+sort1 uses: Bubble Sort
+
+1) random50000:
+real    0m18.332s
+user    0m7.028s
+sys     0m0.096s
+
+2) reversed50000:
+real    0m26.984s
+user    0m4.975s
+sys     0m0.100s
+
+3) sorted50000:
+real    0m5.561s
+user    0m0.040s
+sys     0m0.076s
+
+How do you know?:
+Sort1 uses bubble sort because its sorted file time complexity is minimum as it will break from loop if no swap is done or numbers are already sorted.
+
+
+sort2 uses: Merge Sort
+
+1) random50000:
+real    0m5.409s
+user    0m0.024s
+sys     0m0.095s
+
+2) reversed50000:
+real    0m6.375s
+user    0m0.028s
+sys     0m0.091s
+
+3) sorted50000:
+real    0m18.179s
+user    0m0.025s
+sys     0m0.084s
+
+How do you know?:
+Sort2 is mergesort because merge sort will have approximately better time complexity over larger files and time complexity will be more or less similarly in all types of files
+
+
+sort3 uses: Selection Sort
+
+1) random50000:
+real    0m10.342s
+user    0m2.570s
+sys     0m0.112s
+
+2) reversed50000:
+real    0m12.294s
+user    0m2.623s
+sys     0m0.104s
+
+3) sorted50000:
+real    0m28.103s
+user    0m2.614s
+sys     0m0.064s
+
+How do you know?:
+Sort3 is selection sort because merge sort no matter what file is provided will take n square complexity because it will check all the values individually everytime.
