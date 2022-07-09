@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <title>Trivia!</title>
+    <script>
+
+        function reset(element) {
+            element = "." + element;
+            var x = document.querySelectorAll(element);
+            for (i = 0; i < x.length; i++) {
+                x[i].style.backgroundColor = "#d9edff";
+            }
+        }
+
+        function displayAns(ans, element, output) {
+            reset("btn");
+            let button = document.getElementById(element);
+
+            if (ans == true) {
+                button.style.backgroundColor = "green";
+                document.getElementById(output).innerHTML = "Correct";
+            } else {
+                button.style.backgroundColor = "red";
+                document.getElementById(output).innerHTML = "Incorrect";
+            }
+        }
+
+        function check() {
+            var input = document.getElementById("ans").value.toUpperCase();
+            if (input == "DIAMOND") {
+                displayAns(true, "ans", "answer2");
+            } else {
+                displayAns(false, "ans", "answer2");
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelector("#cButton").onclick = function () {
+                displayAns(true, "cButton", "answer1");
+            };
+            document.querySelector("#button1").onclick = function () {
+                displayAns(false, "button1", "answer1");
+            };
+            document.querySelector("#button2").onclick = function () {
+                displayAns(false, "button2", "answer1");
+            };
+            document.querySelector("#button3").onclick = function () {
+                displayAns(false, "button3", "answer1");
+            };
+        });
+
+    </script>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Trivia!</h1>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h2>Part 1: Multiple Choice </h2>
+            <hr>
+            <h3>At what temperature are Celsius and Fahrenheit equal?</h3>
+            <h3 id="answer1"></h3>
+            <button class="btn" id="cButton">-40</button>
+            <button class="btn" id="button1">-140</button>
+            <button class="btn" id="button2">-120</button>
+            <button class="btn" id="button3">145</button>
+        </div>
+
+        <div class="section">
+            <h2>Part 2: Free Response</h2>
+            <h3>What is the hardest natural substance on Earth?</h3>
+            <h3 id="answer2"></h3>
+            <hr>
+            <form onsubmit="check(); return false">
+                <input class="btn" id="ans" autocomplete="off" type="text">
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
