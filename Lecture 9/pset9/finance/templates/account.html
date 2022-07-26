@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Account Details
+{% endblock %}
+
+{% block main %}
+<div class="container row m-auto">
+    <div class="col-sm">
+        <h2 class="my-4">Account Details</h2>
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Username</th>
+                    <th scope="col">Cash</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{value["username"]}}</td>
+                    <td>{{value["cash"] | usd}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <div class="col-sm">
+        <h2 class="my-4">Deposit Cash</h2>
+        <form action="/account" method="post">
+            <div class="mb-3">
+                <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="cash" name="cash"
+                    placeholder="Deposit Cash" step="0.01" type="number">
+            </div>
+            <button class="btn btn-primary" type="submit">Deposit</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

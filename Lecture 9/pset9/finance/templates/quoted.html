@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Quoted
+{% endblock %}
+
+{% block main %}
+<h2>Share Details</h2>
+<div class="container">
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Symbol</th>
+                <th scope="col">Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{value["name"]}}</td>
+                <td>{{value["symbol"]}}</td>
+                <td>{{value["price"] | usd}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

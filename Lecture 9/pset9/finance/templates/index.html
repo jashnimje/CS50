@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Portfolio
+{% endblock %}
+
+{% block main %}
+
+<h2>Portfolio</h2>
+<div class="container">
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Symbol</th>
+                <th scope="col">Name</th>
+                <th scope="col">Shares</th>
+                <th scope="col">Price</th>
+                <th scope="col">Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in range(0, len) %}
+            <tr>
+                <td>{{value[i]["symbol"]}}</td>
+                <td>{{value[i]["name"]}}</td>
+                <td>{{value[i]["shares"]}}</td>
+                <td>{{value[i]["price"] | usd}}</td>
+                <td>{{value[i]["total"] | usd}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot class="">
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><b>Cash</b></td>
+                <td>{{user["cash"] | usd}}</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><b>TOTAL</b></td>
+                <td>{{user["total"] | usd}}</td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+
+{% endblock %}
